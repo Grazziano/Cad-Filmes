@@ -1,10 +1,9 @@
 import React from 'react';
+import Home from './Home'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Controle pessoal de filmes</h1>
-    </div>
+    <Home/>
   );
 }
 
