@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './Home'
 import FormCadastro from './FormCadastro'
 import Listagem from './Listagem';
+import Resumo from './Resumo';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Home />
       <FormCadastro />
       <Listagem />
+      <Resumo />
     </div>
   );
 }
