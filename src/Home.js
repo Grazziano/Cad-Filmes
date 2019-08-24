@@ -10,10 +10,10 @@ import React from 'react'
 }*/
 
 const Home = () => (
-        <div>
+    <div>
         <h1>Controle Pessoal de Filmes</h1>
         <h2>Sistema Filmoteca</h2>
-        </div>
+    </div>
 )
 
 export default Home
