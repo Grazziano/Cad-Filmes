@@ -4,20 +4,19 @@ import ItemLista from './ItemLista'
 class Listagem extends React.Component {
 
     state = {
-        filmes: [
-            {
-                titulo: 'A Era do Gelo',
-                genero: 'Infantil',
-                data: '20/02/2017',
-                nota: 8
-            },
-            {
-                titulo: 'Esqueceram de Mim',
-                genero: 'Comédia',
-                data: '20/02/2012',
-                nota: 7
-            }
-        ]
+        filmes: []
+    }
+
+    // método "especial" executado logo após a renderização da página
+    componentDidMount() {
+        this.loadFilmes()
+    }
+
+    // assync, await: executa em paralelo a algum outro processo
+    loadFilmes = async () => {
+        let dados = await JSON.parse(localStorage.getItem('filmes'))
+        this.setState({ filmes: dados })
+
     }
 
     render() {

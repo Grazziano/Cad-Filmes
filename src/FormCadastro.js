@@ -67,12 +67,16 @@ class FormCadastro extends React.Component {
                             <span className="input-group-text">Gênero:</span>
                         </div>
                         <select className="form-control" name="genero" onChange={this.handleChange} value={this.state.genero}>
+                            <option></option>
                             <option>Aventura</option>
                             <option>Comédia</option>
                             <option>Drama</option>
                             <option>Infantíl</option>
                             <option>Romance</option>
                             <option>Suspense</option>
+                            <option>Terror</option>
+                            <option>Faroeste</option>
+                            <option>Fantasia</option>
                         </select>
                     </div>
                 </div>
