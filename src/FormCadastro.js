@@ -13,9 +13,46 @@ class FormCadastro extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    handleSubmit = e => {
+        // evita o funcionamento padrão do método (ou seja, no evento submit, enviar o form)
+        e.preventDefault();
+
+        // declara um vetor de filmes (var: escopo de function, let: escopo de módulo)
+        let filmes = []
+
+        // verifica se existem filmes cadastrados
+
+        if (localStorage.getItem('filmes')) {
+            // converte um objeto JSON em array
+            filmes = JSON.parse(localStorage.getItem("filmes"))
+        }
+
+        // adiciona ao vetor um objeto filme com seus atributos
+        filmes.push({
+            titulo: this.state.titulo,
+            genero: this.state.genero,
+            data: this.state.data,
+            nota: this.state.nota
+        })
+
+        // salva em localStorage o novo conteúdo do vetor
+        // converte o array em JSON
+        localStorage.setItem("filmes", JSON.stringify(filmes))
+
+        // limpa o conteúdo dos campos
+        this.setState({
+            titulo: '',
+            genero: '',
+            data: '',
+            nota: 0
+        })
+
+        alert("Ok! Filme cadastrado")
+    }
+
     render() {
         return (
-            <form className="mx-3">
+            <form className="mx-3" onSubmit={this.handleSubmit}>
                 <div className="row">
                     <div className="input-group col-sm-6 mt-3">
                         <div className="input-group-prepend">
