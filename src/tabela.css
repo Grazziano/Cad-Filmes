@@ -10,4 +10,27 @@
     .table-action td:not(:last-child) {
         display: block;
     }
+
+    .table-action td:nth-child(1)::before {
+        content: 'Titulo: '
+    }
+
+    .table-action td:nth-child(2)::before {
+        content: 'Gênero: '
+    }
+
+    .table-action td:nth-child(3)::before {
+        content: 'Data: '
+    }
+
+    .table-action td:nth-child(4)::before {
+        content: 'Nota: '
+    }
+
+    .table-action td::before {
+        font-weight: bold;
+        color: blue;
+        display: inline-block;
+        width: 70px;
+    }
 }
