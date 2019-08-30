@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemLista from './ItemLista'
+import './tabela.css'
 
 class Listagem extends React.Component {
 

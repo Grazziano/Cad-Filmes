@@ -1,0 +1,13 @@
+@media screen and (max-width: 480px) {
+    .table-action thead {
+        display: none;
+    }
+
+    .table-action td {
+        border: 0;
+    }
+
+    .table-action td:not(:last-child) {
+        display: block;
+    }
+}
