@@ -19,6 +19,10 @@ class Listagem extends React.Component {
 
     }
 
+    formataData = data => {
+        return new Date(data).toLocaleDateString('pt-br', { timeZone: 'UTC' })
+    }
+
     render() {
         return (
             <div className="mx-2">
@@ -38,7 +42,7 @@ class Listagem extends React.Component {
                             <ItemLista key={filme.titulo}
                                 titulo={filme.titulo}
                                 genero={filme.genero}
-                                data={filme.data}
+                                data={this.formataData(filme.data)}
                                 nota={filme.nota} />
                         ))}
                     </tbody>
