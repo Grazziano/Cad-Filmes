@@ -16,6 +16,13 @@ class Resumo extends React.Component {
         const filmes = await JSON.parse(localStorage.getItem('filmes'))
 
         this.setState({ total: filmes.length })
+
+        let soma = 0;
+        filmes.map((filme) => (
+            soma += Number(filme.nota)
+        ))
+
+        this.setState({ media: (soma / filmes.length).toFixed(1) })
     }
 
     render() {
@@ -25,7 +32,7 @@ class Resumo extends React.Component {
                 <div className="media-body">
                     <h4 className="text-danger">Resumo: Filmoteca</h4>
                     <h5><i>Total de Filmes: {this.state.total}</i></h5>
-                    <h5><i>Média de Notas: </i></h5>
+                    <h5><i>Média de Notas: {this.state.media}</i></h5>
                     <h5 className="text-primary">Filmes por Gênero: </h5>
                 </div>
             </div>
