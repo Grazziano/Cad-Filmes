@@ -17,12 +17,16 @@ class Resumo extends React.Component {
 
         this.setState({ total: filmes.length })
 
-        let soma = 0;
-        filmes.map((filme) => (
-            soma += Number(filme.nota)
-        ))
+        // let soma = 0;
+        // filmes.map((filme) => (
+        //     soma += Number(filme.nota)
+        // ))
 
-        this.setState({ media: (soma / filmes.length).toFixed(1) })
+        let calcSoma = filmes.reduce((soma, filme) => {
+            return soma + Number(filme.nota)
+        }, 0)
+
+        this.setState({ media: (calcSoma / filmes.length).toFixed(1) })
     }
 
     render() {
