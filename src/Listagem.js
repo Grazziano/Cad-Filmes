@@ -16,6 +16,7 @@ class Listagem extends React.Component {
     // assync, await: executa em paralelo a algum outro processo
     loadFilmes = async () => {
         let dados = await JSON.parse(localStorage.getItem('filmes'))
+        dados.sort(function (a, b) { return a.titulo < b.titulo ? -1 : 1 })
         this.setState({ filmes: dados })
 
     }

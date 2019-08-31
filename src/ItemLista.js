@@ -8,8 +8,8 @@ const ItemLista = props => {
             <td>{props.data}</td>
             <td>{props.nota}</td>
             <td>
-                <button className="btn btn-sm btn-danger">Excluir</button>&nbsp;
-                <button className="btn btn-sm btn-warning">Alterar</button>
+                <button className="btn btn-sm btn-danger mb-1">Excluir</button>&nbsp;
+                <button className="btn btn-sm btn-warning mb-1">Alterar</button>
             </td>
         </tr>
     )
