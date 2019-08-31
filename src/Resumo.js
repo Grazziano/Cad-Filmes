@@ -27,6 +27,18 @@ class Resumo extends React.Component {
         }, 0)
 
         this.setState({ media: (calcSoma / filmes.length).toFixed(1) })
+
+        let filmesGenero = filmes.reduce((todosFilmes, filme) => {
+            if (filme.genero in todosFilmes) {
+                todosFilmes[filme.genero]++
+            } else {
+                todosFilmes[filme.genero] = 1
+            }
+
+            return todosFilmes
+        }, {})
+
+        this.setState({ generosNum: filmesGenero })
     }
 
     render() {
@@ -38,6 +50,9 @@ class Resumo extends React.Component {
                     <h5><i>Total de Filmes: {this.state.total}</i></h5>
                     <h5><i>Média de Notas: {this.state.media}</i></h5>
                     <h5 className="text-primary">Filmes por Gênero: </h5>
+                    {Object.entries(this.state.generosNum).map(([key, value]) =>
+                        <h6 key={key}> {key} - {value}</h6>
+                    )}
                 </div>
             </div>
         )
